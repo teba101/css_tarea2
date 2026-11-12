@@ -1,37 +1,15 @@
-# Plantilla SASS (Vanilla)
+# GathSession - CSS Tarea Entregable 2
 
-Este es un entorno de desarrollo ultraligero y preconfigurado para compilar SASS a CSS utilizando directamente el motor de Node.js, sin empaquetadores complejos como Vite o Webpack. Ideal para maquetación rápida y ejercicios.
+Maquetación estática de una landing page basada en un diseño profesional. El objetivo principal del proyecto es estructurar una arquitectura CSS escalable y replicar layouts complejos con solapamiento de capas.
 
-## Requisitos previos
-Necesitas tener instalado [Node.js](https://nodejs.org/) en tu sistema para ejecutar los comandos.
+## 🚀 Tecnologías y conceptos aplicados
 
-## Instrucciones de uso
+* **HTML5 Semántico**: Uso de etiquetas estructurales (`header`, `main`, `section`, `figure`, `nav`).
+* **SASS (Arquitectura 7-1)**: Código modularizado separando variables, base, componentes y layout para facilitar el mantenimiento.
+* **Metodología BEM**: Nomenclatura estricta (Block, Element, Modifier) para encapsular estilos y evitar problemas de especificidad.
+* **Layout Avanzado**: Uso combinado de Flexbox para la estructura general y posicionamiento absoluto con `z-index` para el collage interactivo de imágenes.
+* **Interactividad SVG**: Incrustación de gráficos vectoriales en el DOM para manipular sus propiedades de color (`fill`/`stroke`) a través de estados `:hover` en CSS.
 
-**1. Preparar el proyecto**
-* Si usas este repositorio como plantilla en GitHub, pulsa "Use this template".
-* Si lo usas en local, haz una copia de esta carpeta y renómbrala con el nombre de tu nuevo proyecto. (Si la carpeta copiase un directorio `node_modules`, bórralo antes de continuar).
+## 🔗 Despliegue
 
-**2. Instalar dependencias**
-Abre la terminal en la raíz de tu nuevo proyecto y ejecuta:
-```bash
-npm install
-```
-
-**3. Autorizar el vigilante de archivos (Watcher)
-Para que SASS recompile tu código automáticamente al guardar, utiliza el paquete @parcel/watcher. Autoriza su ejecución con:
-```bash
-npm install-scripts approve @parcel/watcher
-```
-**4. Arrancar el entorno de desarrollo
-Ejecuta el siguiente comando para poner a SASS en modo escucha:
-```bash
-npm run dev
-```
-
-## Estructura de trabajo
-
-Escribe todo tu código en los archivos dentro de la carpeta scss/ (tu punto de entrada es main.scss).
-
-El compilador generará y actualizará automáticamente el archivo css/style.css.
-
-No edites el archivo css/style.css a mano, ya que SASS sobrescribirá tus cambios cada vez que guardes. El index.html ya está enlazado a este archivo compilado.
+* [Ver proyecto en vivo (GitHub Pages)]https://teba101.github.io/css_tarea2/
