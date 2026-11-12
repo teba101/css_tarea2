@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.hero__title {
+  font-size: clamp(2.6rem, 4.4vw, 4.35rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  color: $color-text;
+}
+
+.hero__dot {
+  color: $color-accent;
+}
+
+.hero__description {
+  font-size: 1.05rem;
+  color: $color-text-muted;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 34rem;
+}

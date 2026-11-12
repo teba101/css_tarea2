@@ -1,0 +1,317 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* 1. Usar un modelo de caja predecible */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Eliminar márgenes y paddings predeterminados del navegador */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Hacer que las imágenes y multimedia sean responsivas por defecto */
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* 4. Heredar tipografías de forma natural en los controles de formularios */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 5. Comportamiento base del documento */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #2b2d38;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 4.4vw, 4.35rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.hero__dot {
+  color: #eb3e85;
+}
+
+.hero__description {
+  font-size: 1.05rem;
+  color: #b7b8c2;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 34rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 6%;
+}
+.header__logo {
+  color: #ffffff;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.header__accent {
+  color: #eb3e85;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+.header__menu:hover .header__link--active:not(:hover)::after {
+  width: 0;
+}
+.header__link {
+  position: relative;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.header__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background-color: #eb3e85;
+  transition: width 0.3s ease;
+}
+.header__link:hover::after, .header__link--active::after {
+  width: 1.65rem;
+}
+.header__link--active {
+  color: #ffffff;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border: 2px solid transparent;
+}
+.btn--primary {
+  background-color: #eb3e85;
+  color: #ffffff;
+}
+.btn--primary:hover {
+  background-color: #d23174;
+  transform: translateY(-2px);
+}
+.btn--outline {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.btn--outline:hover {
+  background-color: #ffffff;
+  color: #2b2d38;
+  transform: translateY(-2px);
+}
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+}
+.feature__text {
+  max-width: 5.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #ffffff;
+}
+.feature .preview-icon {
+  width: 46px;
+  height: 46px;
+  padding: 11px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.08);
+  stroke: #eb3e85;
+  fill: none;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.feature:hover .preview-icon {
+  stroke: #eb3e85;
+  transform: scale(1.22);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.5rem 6% 4rem;
+  min-height: calc(100vh - 5.5rem);
+  overflow: hidden;
+}
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero::before {
+  width: 720px;
+  height: 720px;
+  top: 6%;
+  right: -6%;
+}
+.hero::after {
+  width: 920px;
+  height: 920px;
+  right: -18%;
+  bottom: -42%;
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  flex: 1.15 1 480px;
+  min-width: 0;
+  max-width: 640px;
+}
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 4.5rem;
+}
+.hero__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+.hero__more:hover {
+  color: #eb3e85;
+  gap: 0.85rem;
+}
+.hero__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, max-content));
+  gap: 1rem 1.5rem;
+}
+.hero__gallery {
+  position: relative;
+  z-index: 1;
+  flex: 0.95 1 420px;
+  display: flex;
+  align-items: stretch;
+  gap: 1.35rem;
+  width: min(100%, 640px);
+  min-width: 0;
+  margin-left: auto;
+}
+.hero__column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-width: 0;
+}
+.hero__column--right {
+  justify-content: center;
+}
+.hero__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+.hero__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.hero__image-wrapper--1, .hero__image-wrapper--3, .hero__image-wrapper--5 {
+  border-radius: 2.75rem;
+}
+.hero__image-wrapper--2, .hero__image-wrapper--4 {
+  aspect-ratio: 1;
+  border-radius: 1.75rem;
+}
+.hero__image-wrapper--1 {
+  aspect-ratio: 3/6.2;
+  background-color: #6a35ff;
+}
+.hero__image-wrapper--1 img {
+  object-position: 66% 20%;
+}
+.hero__image-wrapper--2 {
+  background-color: #34c7d5;
+}
+.hero__image-wrapper--2 img {
+  object-position: center 24%;
+}
+.hero__image-wrapper--3 {
+  aspect-ratio: 3/5.4;
+  background-color: #ffae2b;
+}
+.hero__image-wrapper--3 img {
+  object-position: 58% 18%;
+}
+.hero__image-wrapper--4 {
+  background-color: #eb3e85;
+}
+.hero__image-wrapper--4 img {
+  object-position: 58% 16%;
+}
+.hero__image-wrapper--5 {
+  aspect-ratio: 3/6.2;
+  background-color: #e97a3a;
+}
+.hero__image-wrapper--5 img {
+  object-position: 64% 12%;
+}
+
+/*# sourceMappingURL=style.css.map */

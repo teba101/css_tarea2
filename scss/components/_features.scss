@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+
+  &__text {
+    max-width: 5.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: $color-text;
+  }
+
+  .preview-icon {
+    width: 46px;
+    height: 46px;
+    padding: 11px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.08);
+    stroke: $color-accent;
+    fill: none;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+
+  &:hover .preview-icon {
+    stroke: $color-accent;
+    transform: scale(1.22);
+  }
+}

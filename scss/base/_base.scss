@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-main;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
